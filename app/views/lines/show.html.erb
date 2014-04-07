@@ -1,5 +1,11 @@
 <h1><%=@line.name%></h1>
 
+<h4>This line stops at these stations</h4>
+<ul>
+  <% @line.stations.each do |station| %>
+    <li><%= station.name %></li>
+  <% end %>
+</ul>
 
 <p><%= link_to "Edit this line", edit_line_path(@line), :class => "btn btn-default" %></p>
 <p><%= link_to "Delete this line", line_path(@line),

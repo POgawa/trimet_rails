@@ -8,7 +8,7 @@
 
   <div>
     <% @lines.each do |line| %>
-      <%= check_box_tag("line_ids[]", line.id) %>
+      <%= check_box_tag("line_ids[]", line.id, @station.lines.include?(line)) %>
       <%= label_tag("#{line.name}") %>
     <% end %>
   </div>
