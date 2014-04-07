@@ -1,9 +1,16 @@
 <%= render("layouts/errors", :object => @station) %>
 
-<%= form_for(@station) do |f| %>
+<%= form_for @station, :html => { :multipart => true } do |f| %>
   <div>
-    <%= f.label :name %>
+    <%= f.label "Station name" %>
     <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <% @lines.each do |line| %>
+      <%= check_box_tag("line_ids[]", line.id) %>
+      <%= label_tag("#{line.name}") %>
+    <% end %>
   </div>
 
   <%= f.submit %>

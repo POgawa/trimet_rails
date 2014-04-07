@@ -6,4 +6,6 @@ Trimet::Application.routes.draw do
   resources :lines do
     resources :stations
   end
+
+  resources :stops
 end

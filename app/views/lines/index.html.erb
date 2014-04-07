@@ -1,0 +1,12 @@
+<h1>Lines</h1>
+
+<p><%= link_to "New line", new_line_path %></p>
+
+
+<ul>
+  <% @lines.each do |line| %>
+    <li><%= link_to  "#{line.name}", line_path(line) %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "View all stations", stations_path %></p>
