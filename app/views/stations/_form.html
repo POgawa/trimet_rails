@@ -1,0 +1,10 @@
+<%= render("layouts/errors", :object => @station) %>
+
+<%= form_for(@station) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

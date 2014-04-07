@@ -1,0 +1,12 @@
+<h1>Homepage</h1>
+
+<p><%= link_to "New station", new_station_path %></p>
+
+
+<ul>
+  <% @stations.each do |station| %>
+    <li><%= link_to  "#{station.name}", station_path(station) %></li>
+  <% end %>
+</ul>
+
+
